@@ -1,13 +1,13 @@
 {
-  "main.css": "/mtg-land-switcher/static/css/main.1944d5a3.chunk.css",
-  "main.js": "/mtg-land-switcher/static/js/main.44aee867.chunk.js",
-  "main.js.map": "/mtg-land-switcher/static/js/main.44aee867.chunk.js.map",
+  "main.css": "/mtg-land-switcher/static/css/main.e1180ca7.chunk.css",
+  "main.js": "/mtg-land-switcher/static/js/main.03001ecc.chunk.js",
+  "main.js.map": "/mtg-land-switcher/static/js/main.03001ecc.chunk.js.map",
   "runtime~main.js": "/mtg-land-switcher/static/js/runtime~main.2fb462f7.js",
   "runtime~main.js.map": "/mtg-land-switcher/static/js/runtime~main.2fb462f7.js.map",
   "static/js/2.6bbd2876.chunk.js": "/mtg-land-switcher/static/js/2.6bbd2876.chunk.js",
   "static/js/2.6bbd2876.chunk.js.map": "/mtg-land-switcher/static/js/2.6bbd2876.chunk.js.map",
   "index.html": "/mtg-land-switcher/index.html",
-  "precache-manifest.2eafa73cbd5b03c2c0af494bcef861f8.js": "/mtg-land-switcher/precache-manifest.2eafa73cbd5b03c2c0af494bcef861f8.js",
+  "precache-manifest.afa62b0b177b4f282cc4cf77c4b81c10.js": "/mtg-land-switcher/precache-manifest.afa62b0b177b4f282cc4cf77c4b81c10.js",
   "service-worker.js": "/mtg-land-switcher/service-worker.js",
-  "static/css/main.1944d5a3.chunk.css.map": "/mtg-land-switcher/static/css/main.1944d5a3.chunk.css.map"
+  "static/css/main.e1180ca7.chunk.css.map": "/mtg-land-switcher/static/css/main.e1180ca7.chunk.css.map"
 }
