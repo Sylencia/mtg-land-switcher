@@ -1,6 +1,7 @@
 .land-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   width: 80vw;
   margin: 0 auto;
@@ -10,16 +11,12 @@
 .land {
   display: flex;
   flex-direction: column;
-  width: 12vw;
+  width: 200px;
   font-size: 20px;
   text-align: center;
+  margin-bottom: 12px;
 }
 
 .land-image {
-  height: 15vh;
-}
-
-.randomise-button {
-  text-align: center;
-  margin-top: 16px;
+  width: 200px;
 }
