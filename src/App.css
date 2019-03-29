@@ -1,6 +1,9 @@
 .app {
   background-color: #282c34;
   min-height: 100vh;
+}
+
+.deck-section {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -8,11 +11,12 @@
   font-size: calc(10px + 2vmin);
   color: white;
   text-align: center;
+  min-height: 60vh;
 }
 
 .deck-ta {
   resize: none;
-  height: 60vh;
+  height: 50vh;
   width: 25vw;
   font-family: 'Courier New', Courier, monospace;
   font-size: 14px;

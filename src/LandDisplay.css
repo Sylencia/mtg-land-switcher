@@ -1,0 +1,25 @@
+.land-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 80vw;
+  margin: 0 auto;
+  color: white;
+}
+
+.land {
+  display: flex;
+  flex-direction: column;
+  width: 12vw;
+  font-size: 20px;
+  text-align: center;
+}
+
+.land-image {
+  height: 15vh;
+}
+
+.randomise-button {
+  text-align: center;
+  margin-top: 16px;
+}
