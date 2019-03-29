@@ -1,28 +1,36 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, createRef } from 'react'
+import { randomiseLands } from './LandUtils'
+import './App.css'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+const App = () => {
+  const [userDeck, setUserDeck] = useState('')
+  const newDeckRef = createRef()
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <div className="deck-container">
+          Input
+          <textarea
+            className="input-ta"
+            value={userDeck}
+            onChange={e => setUserDeck(e.target.value)}
+          />
+        </div>
+        <span className="right-arrow">➡</span>
+        <div className="deck-container">
+          Output
+          <textarea
+            className="input-ta"
+            readOnly
+            ref={newDeckRef}
+            value={randomiseLands(userDeck)}
+            onClick={() => newDeckRef.current.select()}
+          />
+        </div>
+      </header>
+    </div>
+  )
 }
 
-export default App;
+export default App
