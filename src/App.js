@@ -1,6 +1,7 @@
 import React, { useState, createRef } from 'react'
 import { changeLandsInDeck, getRandomisedLands } from './LandUtils'
-import LandDisplay from './LandDisplay'
+import { LandDisplay } from './components/LandDisplay'
+import { Randomise } from './components/Randomise'
 import './App.css'
 
 const App = () => {
@@ -33,7 +34,8 @@ const App = () => {
           />
         </div>
       </div>
-      <LandDisplay lands={randomLands} setRandomLands={setRandomLands} />
+      <LandDisplay lands={randomLands} />
+      <Randomise setRandomLands={setRandomLands} />
     </div>
   )
 }

@@ -1,10 +1,9 @@
 import React, { Fragment } from 'react'
-import { getRandomisedLands } from './LandUtils'
 import PropTypes from 'prop-types'
 
 import './LandDisplay.css'
 
-const LandDisplay = ({ lands, setRandomLands }) => {
+export const LandDisplay = ({ lands }) => {
   return (
     <Fragment>
       <div className="land-container">
@@ -25,18 +24,10 @@ const LandDisplay = ({ lands, setRandomLands }) => {
           )
         })}
       </div>
-      <div className="randomise-button">
-        <button onClick={() => setRandomLands(getRandomisedLands())}>
-          Randomise
-        </button>
-      </div>
     </Fragment>
   )
 }
 
 LandDisplay.propTypes = {
   lands: PropTypes.shape().isRequired,
-  setRandomLands: PropTypes.func.isRequired,
 }
-
-export default LandDisplay
