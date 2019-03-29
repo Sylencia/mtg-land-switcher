@@ -32,15 +32,21 @@
   }
 }
 
-.input-ta {
+.deck-ta {
   resize: none;
   height: 80vh;
   width: 25vw;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
 }
 
 .deck-container {
   display: flex;
   flex-direction: column;
+}
+
+.deck-title {
+  margin-bottom: 16px;
 }
 
 .right-arrow {
