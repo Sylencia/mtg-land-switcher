@@ -8,7 +8,6 @@ const App = () => {
 
   return (
     <div className="App">
-      <h2>MTG Arena Land Switcher</h2>
       <header className="App-header">
         <div className="deck-container">
           <span className="deck-title">Input</span>
