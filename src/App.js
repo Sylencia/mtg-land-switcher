@@ -8,24 +8,27 @@ const App = () => {
 
   return (
     <div className="App">
+      <h2>MTG Arena Land Switcher</h2>
       <header className="App-header">
         <div className="deck-container">
-          Input
+          <span className="deck-title">Input</span>
           <textarea
-            className="input-ta"
+            className="deck-ta"
             value={userDeck}
             onChange={e => setUserDeck(e.target.value)}
+            spellCheck="false"
           />
         </div>
         <span className="right-arrow">➡</span>
         <div className="deck-container">
-          Output
+          <span className="deck-title">Output</span>
           <textarea
-            className="input-ta"
+            className="deck-ta"
             readOnly
             ref={newDeckRef}
             value={randomiseLands(userDeck)}
             onClick={() => newDeckRef.current.select()}
+            spellCheck="false"
           />
         </div>
       </header>
