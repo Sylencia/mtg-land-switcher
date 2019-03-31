@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 80vw;
+  margin: 0 auto;
+  color: white;
+}
+
+.land {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.image {
+  width: 200px;
+}
+
+.button {
+  background: none;
+  border: none;
+  margin: 2px auto 0;
+  padding: 0 5px;
+  width: fit-content;
+  cursor: pointer;
+  color: #24a0ed;
+  text-decoration: underline;
+}

@@ -27,6 +27,7 @@ module.exports = {
     'space-before-function-paren': OFF,
     'react/jsx-filename-extension': OFF,
     'prettier/prettier': 'error',
+    indent: OFF,
   },
   settings: {
     react: {
