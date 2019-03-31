@@ -1,13 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { getRandomisedLands } from '../../LandUtils'
 import styles from './Randomise.module.css'
 
 export const Randomise = ({ setRandomLands }) => (
   <div className={styles.button}>
-    <button onClick={() => setRandomLands(getRandomisedLands())}>
-      Randomise
-    </button>
+    <button onClick={setRandomLands}>Randomise</button>
   </div>
 )
 

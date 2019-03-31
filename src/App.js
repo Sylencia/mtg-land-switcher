@@ -9,14 +9,20 @@ import styles from './App.module.css'
 
 const App = () => {
   const [userDeck, setUserDeck] = useState('')
-  const [randomLands, setRandomLands] = useState(getRandomisedLands())
+  const [landData, setLandData] = useState(lands)
+  const [randomLands, setRandomLands] = useState(getRandomisedLands(landData))
   const [modalOpen, setModalOpen] = useState(false)
   const [modalLand, setModalLand] = useState('Island')
-  const [landData] = useState(lands)
   const newDeckRef = createRef()
 
-  const toggleModal = () => {
-    setModalOpen(!modalOpen)
+  const closeModal = () => {
+    setModalOpen(false)
+    getNewLands()
+  }
+
+  const getNewLands = () => {
+    console.log(landData)
+    setRandomLands(getRandomisedLands(landData))
   }
 
   const openModal = landType => {
@@ -26,8 +32,13 @@ const App = () => {
 
   return (
     <Fragment>
-      <Modal isOpen={modalOpen} onClose={toggleModal}>
-        <LandFilter landData={landData} landType={modalLand} />
+      <Modal isOpen={modalOpen}>
+        <LandFilter
+          landData={landData}
+          landType={modalLand}
+          setLandData={setLandData}
+          closeModal={closeModal}
+        />
       </Modal>
       <div className={styles.app}>
         <div className={styles.deckSection}>
@@ -54,7 +65,7 @@ const App = () => {
           </div>
         </div>
         <LandDisplay lands={randomLands} onClick={openModal} />
-        <Randomise setRandomLands={setRandomLands} />
+        <Randomise setRandomLands={getNewLands} />
       </div>
     </Fragment>
   )
