@@ -3,12 +3,10 @@ import { createPortal } from 'react-dom'
 
 import styles from './Modal.module.css'
 
-export const Modal = ({ children, onClose, isOpen }) =>
+export const Modal = ({ children, isOpen }) =>
   isOpen
     ? createPortal(
-        <div className={styles.modal} onClick={onClose}>
-          {children}
-        </div>,
+        <div className={styles.modal}>{children}</div>,
         document.body
       )
     : null

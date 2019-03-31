@@ -1,13 +1,9 @@
-import lands from './data/lands.json'
-
 const getRandomInt = max => Math.floor(Math.random() * Math.floor(max))
 
-export const getLandData = landType => lands[landType]
-
-export const getRandomisedLands = () => {
-  const landTypes = Object.keys(lands)
+export const getRandomisedLands = landData => {
+  const landTypes = Object.keys(landData)
   const randomisedLands = landTypes.reduce((newLands, landType) => {
-    const possibleLands = lands[landType]
+    const possibleLands = landData[landType].filter(land => land.selectable)
     newLands[landType] = possibleLands[getRandomInt(possibleLands.length)]
     return newLands
   }, {})
