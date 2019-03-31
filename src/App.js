@@ -21,7 +21,6 @@ const App = () => {
   }
 
   const getNewLands = () => {
-    console.log(landData)
     setRandomLands(getRandomisedLands(landData))
   }
 
