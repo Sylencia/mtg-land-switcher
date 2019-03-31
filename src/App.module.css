@@ -3,7 +3,7 @@
   min-height: 100vh;
 }
 
-.deck-section {
+.deckSection {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -14,7 +14,7 @@
   min-height: 60vh;
 }
 
-.deck-ta {
+.textarea {
   resize: none;
   height: 50vh;
   width: 25vw;
@@ -22,16 +22,16 @@
   font-size: 14px;
 }
 
-.deck-container {
+.deckContainer {
   display: flex;
   flex-direction: column;
 }
 
-.deck-title {
+.title {
   margin-bottom: 16px;
 }
 
-.right-arrow {
+.arrow {
   font-size: 72px;
   margin: 0 32px;
 }
