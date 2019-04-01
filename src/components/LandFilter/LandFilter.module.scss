@@ -4,18 +4,28 @@
   flex-wrap: wrap;
   justify-content: center;
   width: 80vw;
+  max-width: 1400px;
   margin: 0 auto;
   color: white;
+}
+
+.heading {
+  text-align: center;
 }
 
 .land {
   display: flex;
   flex-direction: column;
   width: 200px;
-  margin: 0 10px;
+  margin: 0 10px 10px;
   font-size: 20px;
   text-align: center;
-  margin-bottom: 12px;
+
+  @media (max-width: 850px) {
+    width: 160px;
+    font-size: 12px;
+    margin: 0 5px 5px;
+  }
 }
 
 .removed {
@@ -25,6 +35,10 @@
 
 .image {
   width: 200px;
+
+  @media (max-width: 850px) {
+    width: 160px;
+  }
 }
 
 .button {
@@ -34,21 +48,21 @@
   border: none;
   padding: 5px 20px;
   font: bold 24px 'Nunito';
-}
 
-.button:hover {
-  background-color: #346392;
-  text-shadow: -1px 1px #27496d;
-}
+  &:hover {
+    background-color: #346392;
+    text-shadow: -1px 1px #27496d;
+  }
 
-.button:active {
-  background-color: #27496d;
-  text-shadow: -1px 1px #193047;
-}
+  &:active {
+    background-color: #27496d;
+    text-shadow: -1px 1px #193047;
+  }
 
-.button:disabled {
-  background-color: grey;
-  text-shadow: -1px 1px grey;
+  &:disabled {
+    background-color: grey;
+    text-shadow: -1px 1px grey;
+  }
 }
 
 .buttonContainer {
