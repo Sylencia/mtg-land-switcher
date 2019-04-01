@@ -34,9 +34,15 @@ export const LandFilter = ({ landData, landType, setLandData, closeModal }) => {
           </div>
         ))}
       </div>
-      <button disabled={activeLandCount < 1} onClick={closeModal}>
-        Save Filters
-      </button>
+      <div className={styles.buttonContainer}>
+        <button
+          className={styles.button}
+          disabled={activeLandCount < 1}
+          onClick={closeModal}
+        >
+          Save Filters
+        </button>
+      </div>
     </div>
   )
 }

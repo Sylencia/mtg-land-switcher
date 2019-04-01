@@ -67,12 +67,12 @@
     },
     {
       "name": "Plains (GRN) 260",
-      "imageUrl": "https://img.scryfall.com/cards/art_crop/en/grn/260.jpg",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/b/9/b983acda-68b6-468b-b0c1-aad8b53db49c.jpg",
       "selectable": true
     },
     {
       "name": "Plains (RNA) 260",
-      "imageUrl": "https://img.scryfall.com/cards/art_crop/en/rna/260.jpg",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/9/4/9433619d-5bd1-41e9-ab7a-364c98347b1d.jpg",
       "selectable": true
     }
   ],
@@ -144,12 +144,12 @@
     },
     {
       "name": "Island (GRN) 261",
-      "imageUrl": "http://img.scryfall.com/cards/art_crop/en/grn/261.jpg",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/2/9/29bfbf3e-3a6c-40d4-8e1b-255f429de6cc.jpg",
       "selectable": true
     },
     {
       "name": "Island (RNA) 261",
-      "imageUrl": "http://img.scryfall.com/cards/art_crop/en/rna/261.jpg",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/1/9/197f5bd0-5ab3-4bf4-b20e-1389c0e9527a.jpg",
       "selectable": true
     }
   ],
@@ -200,11 +200,6 @@
       "selectable": true
     },
     {
-      "name": "Swamp (GRN) 262",
-      "imageUrl": "http://img.scryfall.com/cards/art_crop/en/grn/262.jpg",
-      "selectable": true
-    },
-    {
       "name": "Swamp (M19) 269",
       "imageUrl": "http://img.scryfall.com/cards/art_crop/en/m19/269.jpg",
       "selectable": true
@@ -225,8 +220,13 @@
       "selectable": true
     },
     {
+      "name": "Swamp (GRN) 262",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/b/d/bdd5a7f0-5ad3-44e8-a103-07739fd53630.jpg",
+      "selectable": true
+    },
+    {
       "name": "Swamp (RNA) 262",
-      "imageUrl": "http://img.scryfall.com/cards/art_crop/en/rna/262.jpg",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/3/0/308809ad-c150-49b1-83e3-b78494156d7a.jpg",
       "selectable": true
     }
   ],
@@ -277,11 +277,6 @@
       "selectable": true
     },
     {
-      "name": "Mountain (GRN) 263",
-      "imageUrl": "http://img.scryfall.com/cards/art_crop/en/grn/263.jpg",
-      "selectable": true
-    },
-    {
       "name": "Mountain (M19) 273",
       "imageUrl": "http://img.scryfall.com/cards/art_crop/en/m19/273.jpg",
       "selectable": true
@@ -302,8 +297,13 @@
       "selectable": true
     },
     {
+      "name": "Mountain (GRN) 263",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/7/f/7f918a49-a046-4115-80b8-13490ed5cd0a.jpg",
+      "selectable": true
+    },
+    {
       "name": "Mountain (RNA) 263",
-      "imageUrl": "http://img.scryfall.com/cards/art_crop/en/rna/263.jpg",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/5/4/54a773e3-93f0-4bf8-ab6a-8cee939d743a.jpg",
       "selectable": true
     }
   ],
@@ -375,12 +375,12 @@
     },
     {
       "name": "Forest (GRN) 264",
-      "imageUrl": "http://img.scryfall.com/cards/art_crop/en/grn/264.jpg",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/d/8/d85892ae-dacd-4a55-a557-9db3c16017c7.jpg",
       "selectable": true
     },
     {
       "name": "Forest (RNA) 264",
-      "imageUrl": "http://img.scryfall.com/cards/art_crop/en/rna/264.jpg",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/4/8/48764854-d268-462d-a016-27329c8f062d.jpg",
       "selectable": true
     }
   ]
