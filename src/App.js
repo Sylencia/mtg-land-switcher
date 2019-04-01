@@ -1,4 +1,5 @@
-import React, { useState, createRef, Fragment } from 'react'
+import React, { useState, createRef } from 'react'
+import cx from 'classnames'
 import { changeLandsInDeck, getRandomisedLands } from './LandUtils'
 import { LandDisplay } from './components/LandDisplay'
 import { LandFilter } from './components/LandFilter'
@@ -30,7 +31,7 @@ const App = () => {
   }
 
   return (
-    <Fragment>
+    <div className={cx({ [styles.modalOpen]: modalOpen })}>
       <Modal isOpen={modalOpen}>
         <LandFilter
           landData={landData}
@@ -66,7 +67,7 @@ const App = () => {
         <LandDisplay lands={randomLands} onClick={openModal} />
         <Randomise setRandomLands={getNewLands} />
       </div>
-    </Fragment>
+    </div>
   )
 }
 

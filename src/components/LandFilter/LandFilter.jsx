@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 
-import styles from './LandFilter.module.css'
+import styles from './LandFilter.module.scss'
 
 export const LandFilter = ({ landData, landType, setLandData, closeModal }) => {
   const filteredLands = landData[landType]
@@ -19,7 +19,7 @@ export const LandFilter = ({ landData, landType, setLandData, closeModal }) => {
 
   return (
     <div>
-      <h3>
+      <h3 className={styles.heading}>
         {landType}: {activeLandCount} options active
       </h3>
       <div className={styles.container}>
