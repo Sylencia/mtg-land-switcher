@@ -19,10 +19,38 @@
 }
 
 .removed {
-  filter: grayscale();
+  filter: grayscale(100%);
   text-decoration: line-through;
 }
 
 .image {
   width: 200px;
+}
+
+.button {
+  color: #fff;
+  background-color: #6496c8;
+  text-shadow: -1px 1px #417cb8;
+  border: none;
+  padding: 5px 20px;
+  font: bold 24px 'Nunito';
+}
+
+.button:hover {
+  background-color: #346392;
+  text-shadow: -1px 1px #27496d;
+}
+
+.button:active {
+  background-color: #27496d;
+  text-shadow: -1px 1px #193047;
+}
+
+.button:disabled {
+  background-color: grey;
+  text-shadow: -1px 1px grey;
+}
+
+.buttonContainer {
+  text-align: center;
 }
