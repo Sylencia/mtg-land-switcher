@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import styles from './LandDisplay.module.css'
+import styles from './LandDisplay.module.scss'
 
 export const LandDisplay = ({ lands, onClick }) => (
   <div className={styles.container}>
@@ -15,7 +15,7 @@ export const LandDisplay = ({ lands, onClick }) => (
             src={landData.imageUrl}
             alt={landData.name}
           />
-          <button className={styles.button} onClick={() => onClick(landType)}>
+          <button className={styles.button} onClick={onClick}>
             Filter {landType} options
           </button>
         </div>

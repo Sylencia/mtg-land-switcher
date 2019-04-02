@@ -1,27 +1,57 @@
-import React from 'react'
+import React, { useState, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 
 import styles from './LandFilter.module.scss'
 
-export const LandFilter = ({ landData, landType, setLandData, closeModal }) => {
-  const filteredLands = landData[landType]
+export const LandFilter = ({ landData, setLandData, closeModal }) => {
+  const [tab, setTab] = useState('Plains')
+  const updateActiveTab = e => setTab(e.target.id)
+
+  const allLands = Object.keys(landData)
+
+  const tabs = allLands.reduce((allTabs, land) => {
+    const data = landData[land]
+    const activeLandCount = data.filter(land => land.selectable).length
+    const label = `${land} (${activeLandCount})`
+
+    allTabs.push(
+      <Fragment>
+        <input
+          className={cx(styles.input, styles[land.toLowerCase()])}
+          id={land}
+          type="radio"
+          checked={tab === land}
+          onChange={updateActiveTab}
+        />
+        <label className={styles.label} htmlFor={land}>
+          {label}
+        </label>
+      </Fragment>
+    )
+    return allTabs
+  }, [])
+
+  const filteredLands = landData[tab]
   const activeLandCount = filteredLands.filter(land => land.selectable).length
 
   const onLandClick = name => {
     const foundLand = filteredLands.find(land => land.name === name)
+    // Don't allow them to go below 1 active land
+    if (activeLandCount === 1 && foundLand.selectable) {
+      return
+    }
+
     foundLand.selectable = !foundLand.selectable
     setLandData({
       ...landData,
-      [landType]: filteredLands,
+      [tab]: filteredLands,
     })
   }
 
   return (
     <div>
-      <h3 className={styles.heading}>
-        {landType}: {activeLandCount} options active
-      </h3>
+      <div className={styles.tab}>{tabs}</div>
       <div className={styles.container}>
         {filteredLands.map(land => (
           <div
@@ -49,7 +79,6 @@ export const LandFilter = ({ landData, landType, setLandData, closeModal }) => {
 
 LandFilter.propTypes = {
   landData: PropTypes.shape().isRequired,
-  landType: PropTypes.string.isRequired,
   setLandData: PropTypes.func.isRequired,
   closeModal: PropTypes.func.isRequired,
 }
