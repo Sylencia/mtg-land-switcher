@@ -1,0 +1,32 @@
+.deckSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  text-align: center;
+  min-height: 70vh;
+}
+
+.deckDisplay {
+  resize: none;
+  height: 60vh;
+  width: 25vw;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+}
+
+.deckContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.arrow {
+  font-size: 72px;
+  margin: 0 32px;
+}
