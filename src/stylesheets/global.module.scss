@@ -1,0 +1,33 @@
+:global {
+  .main-button {
+    color: #fff;
+    background-color: orange;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 20px;
+    font: bold 24px 'Nunito';
+
+    &:hover {
+      background-color: darken(orange, 5%);
+    }
+
+    &:active {
+      background-color: darken(orange, 10%);
+    }
+
+    &:disabled {
+      background-color: grey;
+    }
+  }
+
+  .text-button {
+    background: none;
+    border: none;
+    margin: 2px auto 0;
+    padding: 0 5px;
+    width: fit-content;
+    cursor: pointer;
+    color: #24a0ed;
+    text-decoration: underline;
+  }
+}

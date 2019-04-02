@@ -1,18 +1,17 @@
-$plains: #F8E7B9;
-$island: #0E68AB;
-$swamp: #A69F9D;
-$mountain: #EB9F82;
-$forest: #C4D3CA;
+@import '../../stylesheets/_colors.scss';
 
 .container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  align-content: flex-start;
   width: 80vw;
   max-width: 1400px;
-  margin: 0 auto;
+  max-height: 80vh;
+  margin: 0 auto 16px;
   color: white;
+  overflow-y: auto;
 }
 
 .heading {
@@ -23,8 +22,9 @@ $forest: #C4D3CA;
   display: flex;
   flex-direction: column;
   width: 200px;
+  max-height: 180px;
   margin: 0 10px 10px;
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
 
   @media (max-width: 850px) {
@@ -49,39 +49,34 @@ $forest: #C4D3CA;
 
 .button {
   color: #fff;
-  background-color: #6496c8;
-  text-shadow: -1px 1px #417cb8;
+  background-color: orange;
   border: none;
+  border-radius: 8px;
   padding: 5px 20px;
   font: bold 24px 'Nunito';
 
   &:hover {
-    background-color: #346392;
-    text-shadow: -1px 1px #27496d;
+    background-color: darken(orange, 5%);
   }
 
   &:active {
-    background-color: #27496d;
-    text-shadow: -1px 1px #193047;
+    background-color: darken(orange, 10%);
   }
 
   &:disabled {
     background-color: grey;
-    text-shadow: -1px 1px grey;
   }
 }
 
 .buttonContainer {
   text-align: center;
+  height: 5vw;
 }
 
 .input {
   display: none;
 
   &:checked {
-    color: $mountain;
-    border-bottom: 2px solid $mountain;
-
     &.plains + .label {
       color: $plains;
       border-bottom: 2px solid $plains;
@@ -107,17 +102,42 @@ $forest: #C4D3CA;
       border-bottom: 2px solid $forest;
     }
   }
+
+  &:not(:checked) {
+    &.plains + .label:hover {
+      border-bottom: 2px solid $plains;
+    }
+
+    &.island + .label:hover {
+      border-bottom: 2px solid $island;
+    }
+
+    &.swamp + .label:hover {
+      border-bottom: 2px solid $swamp;
+    }
+
+    &.mountain + .label:hover {
+      border-bottom: 2px solid $mountain;
+    }
+
+    &.forest + .label:hover {
+      border-bottom: 2px solid $forest;
+    }
+  }
 }
 
 .label {
   display: inline-block;
-  width: 10vw;
-  min-width: 100px;
-  padding: 15px;
+  width: 15vw;
+  min-width: 130px;
+  max-width: 250px;
+  padding: 15px 0;
   font-weight: 600;
   text-align: center;
   color: white;
   border: 1px solid transparent;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  margin: 0 10px;
 
   &:hover {
       color: #aabbcc;
@@ -128,4 +148,14 @@ $forest: #C4D3CA;
 .tab {
   margin-bottom: 16px;
   text-align: center;
+}
+
+.landCountLabel {
+  &:before {
+    content: ' ';
+  }
+
+  @media screen and (max-width: 800px) {
+    font-size: 0;
+  }
 }

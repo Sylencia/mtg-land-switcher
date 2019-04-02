@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import cx from 'classnames'
+import React, { useState, Fragment } from 'react'
 import { getRandomisedLands } from './LandUtils'
 import { DeckEntry } from './components/DeckEntry'
 import { LandDisplay } from './components/LandDisplay'
@@ -8,6 +7,7 @@ import { Modal } from './components/Modal'
 import { Randomise } from './components/Randomise'
 import lands from './data/lands.json'
 import styles from './App.module.css'
+import './stylesheets/global.module.scss'
 
 const App = () => {
   const [userDeck, setUserDeck] = useState('')
@@ -18,6 +18,7 @@ const App = () => {
   const closeModal = () => {
     setModalOpen(false)
     getNewLands()
+    document.body.classList.remove(styles.modalOpen)
   }
 
   const getNewLands = () => {
@@ -26,10 +27,11 @@ const App = () => {
 
   const openModal = () => {
     setModalOpen(true)
+    document.body.classList.add(styles.modalOpen)
   }
 
   return (
-    <div className={cx({ [styles.modalOpen]: modalOpen })}>
+    <Fragment>
       <Modal isOpen={modalOpen}>
         <LandFilter
           landData={landData}
@@ -44,9 +46,9 @@ const App = () => {
           updateDeck={setUserDeck}
         />
         <LandDisplay lands={randomLands} onClick={openModal} />
-        <Randomise setRandomLands={getNewLands} />
+        <Randomise setRandomLands={getNewLands} openFilter={openModal} />
       </div>
-    </div>
+    </Fragment>
   )
 }
 
