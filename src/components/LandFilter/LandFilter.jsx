@@ -25,7 +25,8 @@ export const LandFilter = ({ landData, setLandData, closeModal }) => {
           onChange={updateActiveTab}
         />
         <label className={styles.label} htmlFor={land}>
-          {label}
+          <span>{land}</span>
+          <span className={styles.landCountLabel}>({activeLandCount})</span>
         </label>
       </Fragment>
     )
@@ -66,7 +67,7 @@ export const LandFilter = ({ landData, setLandData, closeModal }) => {
       </div>
       <div className={styles.buttonContainer}>
         <button
-          className={styles.button}
+          className="main-button"
           disabled={activeLandCount < 1}
           onClick={closeModal}
         >

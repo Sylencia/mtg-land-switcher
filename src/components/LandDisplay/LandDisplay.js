@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import styles from './LandDisplay.module.scss'
 
-export const LandDisplay = ({ lands, onClick }) => (
+export const LandDisplay = ({ lands }) => (
   <div className={styles.container}>
     {Object.entries(lands).map(land => {
       const [landType, landData] = land
@@ -15,9 +15,6 @@ export const LandDisplay = ({ lands, onClick }) => (
             src={landData.imageUrl}
             alt={landData.name}
           />
-          <button className={styles.button} onClick={onClick}>
-            Filter {landType} options
-          </button>
         </div>
       )
     })}
@@ -26,5 +23,4 @@ export const LandDisplay = ({ lands, onClick }) => (
 
 LandDisplay.propTypes = {
   lands: PropTypes.shape().isRequired,
-  onClick: PropTypes.func.isRequired,
 }
