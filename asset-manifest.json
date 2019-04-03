@@ -1,13 +1,13 @@
 {
-  "main.css": "/mtg-land-switcher/static/css/main.e1180ca7.chunk.css",
-  "main.js": "/mtg-land-switcher/static/js/main.65e6f315.chunk.js",
-  "main.js.map": "/mtg-land-switcher/static/js/main.65e6f315.chunk.js.map",
-  "runtime~main.js": "/mtg-land-switcher/static/js/runtime~main.2fb462f7.js",
-  "runtime~main.js.map": "/mtg-land-switcher/static/js/runtime~main.2fb462f7.js.map",
-  "static/js/2.6bbd2876.chunk.js": "/mtg-land-switcher/static/js/2.6bbd2876.chunk.js",
-  "static/js/2.6bbd2876.chunk.js.map": "/mtg-land-switcher/static/js/2.6bbd2876.chunk.js.map",
-  "index.html": "/mtg-land-switcher/index.html",
-  "precache-manifest.fb79b2df7f37dac3e43269e5c6bf7f37.js": "/mtg-land-switcher/precache-manifest.fb79b2df7f37dac3e43269e5c6bf7f37.js",
-  "service-worker.js": "/mtg-land-switcher/service-worker.js",
-  "static/css/main.e1180ca7.chunk.css.map": "/mtg-land-switcher/static/css/main.e1180ca7.chunk.css.map"
+  "main.css": "/landcycler/static/css/main.33006600.chunk.css",
+  "main.js": "/landcycler/static/js/main.bb6bb42f.chunk.js",
+  "main.js.map": "/landcycler/static/js/main.bb6bb42f.chunk.js.map",
+  "runtime~main.js": "/landcycler/static/js/runtime~main.53ae7d6b.js",
+  "runtime~main.js.map": "/landcycler/static/js/runtime~main.53ae7d6b.js.map",
+  "static/js/2.a78c90ca.chunk.js": "/landcycler/static/js/2.a78c90ca.chunk.js",
+  "static/js/2.a78c90ca.chunk.js.map": "/landcycler/static/js/2.a78c90ca.chunk.js.map",
+  "index.html": "/landcycler/index.html",
+  "precache-manifest.080d6f208b85bc3b3f8987c153e7d593.js": "/landcycler/precache-manifest.080d6f208b85bc3b3f8987c153e7d593.js",
+  "service-worker.js": "/landcycler/service-worker.js",
+  "static/css/main.33006600.chunk.css.map": "/landcycler/static/css/main.33006600.chunk.css.map"
 }
