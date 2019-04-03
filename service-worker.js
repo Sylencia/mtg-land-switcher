@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/landcycler/precache-manifest.080d6f208b85bc3b3f8987c153e7d593.js"
+  "/mtg-land-switcher/precache-manifest.7a38bece65c5dca3c2909ec1e1170654.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/landcycler/index.html", {
+workbox.routing.registerNavigationRoute("/mtg-land-switcher/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
