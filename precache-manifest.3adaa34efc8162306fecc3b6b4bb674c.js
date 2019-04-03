@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/landcycler/static/js/runtime~main.53ae7d6b.js"
   },
   {
-    "revision": "8b477724e1cfac956ef4",
-    "url": "/landcycler/static/js/main.06b84aa1.chunk.js"
+    "revision": "53288b3f2aff147c2eaf",
+    "url": "/landcycler/static/js/main.2e1fe632.chunk.js"
   },
   {
     "revision": "04daa1f6a248a0c7e66e",
     "url": "/landcycler/static/js/2.d9a145fd.chunk.js"
   },
   {
-    "revision": "8b477724e1cfac956ef4",
-    "url": "/landcycler/static/css/main.9dc5e66b.chunk.css"
+    "revision": "53288b3f2aff147c2eaf",
+    "url": "/landcycler/static/css/main.6bd30164.chunk.css"
   },
   {
-    "revision": "f9652e5561b10fecd966fd2c95c6edd4",
+    "revision": "6183685aa95a01da85a233dc44284bcf",
     "url": "/landcycler/index.html"
   }
 ];
