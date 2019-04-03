@@ -1,3 +1,5 @@
+@import 'stylesheets/_colors.scss';
+
 .app {
   background-color: #282c34;
   min-height: 100vh;
@@ -11,5 +13,5 @@
   margin: 0;
   text-align: center;
   font-weight: 600;
-  color: white;
+  color: $orange;
 }
