@@ -5,6 +5,7 @@ import { LandDisplay } from './components/LandDisplay'
 import { LandFilter } from './components/LandFilter'
 import { Modal } from './components/Modal'
 import { ModifierBar } from './components/ModifierBar'
+import { Credits } from './components/Credits'
 import lands from './data/lands.json'
 import styles from './App.module.scss'
 import './stylesheets/global.module.scss'
@@ -50,7 +51,7 @@ const App = () => {
         />
       </Modal>
       <div className={styles.app}>
-        <h1 className={styles.header}>Landcycling</h1>
+        <h1 className={styles.header}>Landcycler</h1>
         <div className={styles.landIcons}>
           <i className="ms ms-cost ms-w" />
           <i className="ms ms-cost ms-u" />
@@ -66,6 +67,7 @@ const App = () => {
         <LandDisplay lands={randomLands} setRandomLands={getNewLands} />
         <ModifierBar setRandomLands={getNewLands} openFilter={openModal} />
       </div>
+      <Credits />
     </Fragment>
   )
 }
