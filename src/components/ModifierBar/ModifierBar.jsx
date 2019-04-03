@@ -9,7 +9,7 @@ export const ModifierBar = ({ openFilter, setRandomLands }) => (
     </button>
 
     <button className="main-button" onClick={setRandomLands}>
-      Randomise
+      Randomise All
     </button>
   </div>
 )

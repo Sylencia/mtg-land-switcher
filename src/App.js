@@ -6,7 +6,7 @@ import { LandFilter } from './components/LandFilter'
 import { Modal } from './components/Modal'
 import { ModifierBar } from './components/ModifierBar'
 import lands from './data/lands.json'
-import styles from './App.module.css'
+import styles from './App.module.scss'
 import './stylesheets/global.module.scss'
 
 const App = () => {
@@ -40,6 +40,7 @@ const App = () => {
         />
       </Modal>
       <div className={styles.app}>
+        <h1 className={styles.header}>basic.landcycling</h1>
         <DeckEntry
           deck={userDeck}
           newLands={randomLands}
