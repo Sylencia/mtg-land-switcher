@@ -16,7 +16,7 @@ export const LandFilter = ({ landData, setLandData, closeModal }) => {
     const label = `${land} (${activeLandCount})`
 
     allTabs.push(
-      <Fragment>
+      <Fragment key={`filter_${land}`}>
         <input
           className={cx(styles.input, styles[land.toLowerCase()])}
           id={land}
