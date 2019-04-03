@@ -9,7 +9,7 @@ export const DeckEntry = ({ deck, newLands, updateDeck }) => {
   return (
     <div className={styles.deckSection}>
       <div className={styles.deckContainer}>
-        <span className={styles.title}>Input</span>
+        <span className={styles.title}>Imported Deck</span>
         <textarea
           className={styles.deckDisplay}
           value={deck}
@@ -19,7 +19,7 @@ export const DeckEntry = ({ deck, newLands, updateDeck }) => {
       </div>
       <span className={styles.arrow}>➡</span>
       <div className={styles.deckContainer}>
-        <span className={styles.title}>Output</span>
+        <span className={styles.title}>Export to MTG Arena</span>
         <textarea
           className={styles.deckDisplay}
           readOnly

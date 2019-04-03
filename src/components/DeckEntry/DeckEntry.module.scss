@@ -3,10 +3,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 16px;
   color: white;
   text-align: center;
-  min-height: 70vh;
+  min-height: 65vh;
+  margin-bottom: 16px;
 }
 
 .deckDisplay {
@@ -23,7 +24,7 @@
 }
 
 .title {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .arrow {

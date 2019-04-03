@@ -18,7 +18,7 @@ export const changeLandsInDeck = (deck, lands) => {
     if (splitCard.length === 4) {
       const [count, name] = splitCard
       if (name in lands) {
-        return `${count} ${lands[name]}`
+        return `${count} ${lands[name].name}`
       }
     }
 
