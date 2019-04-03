@@ -1,4 +1,4 @@
-@import "./_colors.scss";
+@import './_colors.scss';
 
 :global {
   .main-button {
@@ -18,7 +18,7 @@
     }
 
     &:disabled {
-      background-color: grey;
+      background-color: $disabled;
     }
   }
 
