@@ -19,7 +19,7 @@ const App = () => {
     if (lands.version <= savedVersion && savedData) {
       setLandData(JSON.parse(savedData))
     } else {
-      localStorage.setItem('data', lands.data)
+      localStorage.setItem('data', JSON.stringify(lands.data))
       localStorage.setItem('version', lands.version)
     }
   }, [])
