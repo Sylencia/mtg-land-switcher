@@ -37,5 +37,5 @@
     "gh-pages": "^2.0.1",
     "prettier": "^1.16.4"
   },
-  "homepage": "https://sylencia.github.io/mtg-land-switcher"
+  "homepage": "https://sylencia.github.io/landcycler"
 }
