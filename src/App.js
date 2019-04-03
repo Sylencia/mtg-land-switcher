@@ -4,7 +4,7 @@ import { DeckEntry } from './components/DeckEntry'
 import { LandDisplay } from './components/LandDisplay'
 import { LandFilter } from './components/LandFilter'
 import { Modal } from './components/Modal'
-import { Randomise } from './components/Randomise'
+import { ModifierBar } from './components/ModifierBar'
 import lands from './data/lands.json'
 import styles from './App.module.css'
 import './stylesheets/global.module.scss'
@@ -45,8 +45,8 @@ const App = () => {
           newLands={randomLands}
           updateDeck={setUserDeck}
         />
-        <LandDisplay lands={randomLands} onClick={openModal} />
-        <Randomise setRandomLands={getNewLands} openFilter={openModal} />
+        <LandDisplay lands={randomLands} />
+        <ModifierBar setRandomLands={getNewLands} openFilter={openModal} />
       </div>
     </Fragment>
   )
