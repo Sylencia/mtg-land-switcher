@@ -40,7 +40,7 @@ const App = () => {
         />
       </Modal>
       <div className={styles.app}>
-        <h1 className={styles.header}>basic.landcycling</h1>
+        <h1 className={styles.header}>Basic Landcycling</h1>
         <DeckEntry
           deck={userDeck}
           newLands={randomLands}
