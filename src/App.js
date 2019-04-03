@@ -12,17 +12,27 @@ import './stylesheets/global.module.scss'
 const App = () => {
   const [userDeck, setUserDeck] = useState('')
   const [landData, setLandData] = useState(lands)
-  const [randomLands, setRandomLands] = useState(getRandomisedLands(landData))
+  const [randomLands, setRandomLands] = useState(
+    getRandomisedLands(landData, 'all')
+  )
   const [modalOpen, setModalOpen] = useState(false)
 
   const closeModal = () => {
     setModalOpen(false)
-    getNewLands()
+    Object.entries(randomLands).forEach(([rLandType, rLandData]) => {
+      const info = landData[rLandType].find(
+        dataLand => dataLand.name === rLandData.name
+      )
+
+      if (!info.selectable) {
+        getNewLands(rLandType)
+      }
+    })
     document.body.classList.remove(styles.modalOpen)
   }
 
-  const getNewLands = () => {
-    setRandomLands(getRandomisedLands(landData))
+  const getNewLands = (land = 'all') => {
+    setRandomLands(getRandomisedLands(landData, land, randomLands))
   }
 
   const openModal = () => {
@@ -40,13 +50,20 @@ const App = () => {
         />
       </Modal>
       <div className={styles.app}>
-        <h1 className={styles.header}>Basic Landcycling</h1>
+        <h1 className={styles.header}>Landcycling</h1>
+        <div className={styles.landIcons}>
+          <i className="ms ms-cost ms-w" />
+          <i className="ms ms-cost ms-u" />
+          <i className="ms ms-cost ms-b" />
+          <i className="ms ms-cost ms-r" />
+          <i className="ms ms-cost ms-g" />
+        </div>
         <DeckEntry
           deck={userDeck}
           newLands={randomLands}
           updateDeck={setUserDeck}
         />
-        <LandDisplay lands={randomLands} />
+        <LandDisplay lands={randomLands} setRandomLands={getNewLands} />
         <ModifierBar setRandomLands={getNewLands} openFilter={openModal} />
       </div>
     </Fragment>

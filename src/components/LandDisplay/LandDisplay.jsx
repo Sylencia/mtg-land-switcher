@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import styles from './LandDisplay.module.scss'
 
-export const LandDisplay = ({ lands }) => (
+export const LandDisplay = ({ lands, setRandomLands }) => (
   <div className={styles.container}>
     {Object.entries(lands).map(land => {
       const [landType, landData] = land
@@ -14,6 +14,7 @@ export const LandDisplay = ({ lands }) => (
             className={styles.image}
             src={landData.imageUrl}
             alt={landData.name}
+            onClick={() => setRandomLands(landType)}
           />
         </div>
       )
@@ -23,4 +24,5 @@ export const LandDisplay = ({ lands }) => (
 
 LandDisplay.propTypes = {
   lands: PropTypes.shape().isRequired,
+  setRandomLands: PropTypes.func.isRequired,
 }

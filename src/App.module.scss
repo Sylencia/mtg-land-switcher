@@ -15,3 +15,13 @@
   font-weight: 600;
   color: $orange;
 }
+
+.landIcons {
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+
+  i {
+    margin: 0 8px;
+  }
+}

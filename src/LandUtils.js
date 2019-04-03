@@ -1,10 +1,14 @@
 const getRandomInt = max => Math.floor(Math.random() * Math.floor(max))
 
-export const getRandomisedLands = landData => {
+export const getRandomisedLands = (landData, land, oldLands = {}) => {
   const landTypes = Object.keys(landData)
   const randomisedLands = landTypes.reduce((newLands, landType) => {
     const possibleLands = landData[landType].filter(land => land.selectable)
-    newLands[landType] = possibleLands[getRandomInt(possibleLands.length)]
+    if (land === 'all' || land === landType) {
+      newLands[landType] = possibleLands[getRandomInt(possibleLands.length)]
+    } else {
+      newLands[landType] = oldLands[landType]
+    }
     return newLands
   }, {})
 
