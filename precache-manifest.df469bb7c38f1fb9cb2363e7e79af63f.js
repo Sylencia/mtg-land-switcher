@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/mtg-land-switcher/static/css/main.9dc5e66b.chunk.css"
   },
   {
-    "revision": "034b3be476bec26c411187b9c562c53b",
+    "revision": "a4e76ece4c0912e401220b45083e6812",
     "url": "/mtg-land-switcher/index.html"
   }
 ];

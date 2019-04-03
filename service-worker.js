@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/mtg-land-switcher/precache-manifest.00b558f6083a00dfb96f03f053471265.js"
+  "/mtg-land-switcher/precache-manifest.df469bb7c38f1fb9cb2363e7e79af63f.js"
 );
 
 workbox.clientsClaim();
