@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/landcycler/static/css/main.9dc5e66b.chunk.css"
   },
   {
-    "revision": "89b7e5b07313e5f112470094b1763d89",
+    "revision": "f9652e5561b10fecd966fd2c95c6edd4",
     "url": "/landcycler/index.html"
   }
 ];
