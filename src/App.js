@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import { getRandomisedLands } from './LandUtils'
 import { DeckEntry } from './components/DeckEntry'
 import { LandDisplay } from './components/LandDisplay'
@@ -11,8 +11,19 @@ import styles from './App.module.scss'
 import './stylesheets/global.module.scss'
 
 const App = () => {
+  const [landData, setLandData] = useState(lands.data)
+  // If there's a saved version of the data, use that instead (for filters)
+  useEffect(() => {
+    const savedVersion = localStorage.getItem('version') || 0
+    const savedData = localStorage.getItem('data')
+    if (lands.version <= savedVersion && savedData) {
+      setLandData(JSON.parse(savedData))
+    } else {
+      localStorage.setItem('data', lands.data)
+      localStorage.setItem('version', lands.version)
+    }
+  }, [])
   const [userDeck, setUserDeck] = useState('')
-  const [landData, setLandData] = useState(lands)
   const [randomLands, setRandomLands] = useState(
     getRandomisedLands(landData, 'all')
   )
@@ -29,6 +40,8 @@ const App = () => {
         getNewLands(rLandType)
       }
     })
+    localStorage.setItem('version', lands.version)
+    localStorage.setItem('data', JSON.stringify(landData))
     document.body.classList.remove(styles.modalOpen)
   }
 
