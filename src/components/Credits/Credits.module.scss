@@ -1,0 +1,53 @@
+@import '../../stylesheets/_colors.scss';
+
+.main {
+  background-color: $credit-background;
+}
+
+.innerContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact {
+  width: 190px;
+}
+
+.credits {
+  width: 390px;
+  margin-right: 10px;
+}
+
+.guide {
+  width: 590px;
+  margin-right: 10px;
+}
+
+.header {
+  margin: 0;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  color: $orange;
+  border-bottom: 1px solid white;
+}
+
+.list {
+  color: #f6f6f6;
+  margin-top: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.guideList {
+  color: #f6f6f6;
+  margin-top: 0;
+  list-style: circle;
+}
+
+.link, :link:visited {
+  color: inherit;
+}

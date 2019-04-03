@@ -1,8 +1,9 @@
 @import 'stylesheets/_colors.scss';
 
 .app {
-  background-color: #282c34;
+  background-color: $main-background;
   min-height: 100vh;
+  padding-bottom: 16px;
 }
 
 .modalOpen {
