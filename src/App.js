@@ -21,8 +21,8 @@ const App = () => {
       localStorage.setItem('language', userLang)
     }
   }, [])
+
   const [landData, setLandData] = useState(lands.data)
-  // If there's a saved version of the data, use that instead (for filters)
   useEffect(() => {
     const savedVersion = localStorage.getItem('version') || 0
     const savedData = localStorage.getItem('data')
@@ -33,10 +33,18 @@ const App = () => {
       localStorage.setItem('version', lands.version)
     }
   }, [])
+
   const [userDeck, setUserDeck] = useState('')
-  const [randomLands, setRandomLands] = useState(
-    getRandomisedLands(landData, 'all')
-  )
+  const [randomLands, setRandomLands] = useState({})
+  useEffect(() => {
+    const savedVersion = localStorage.getItem('version') || 0
+    const savedData = localStorage.getItem('data')
+    if (lands.version <= savedVersion && savedData) {
+      setRandomLands(getRandomisedLands(JSON.parse(savedData), 'all'))
+    } else {
+      setRandomLands(getRandomisedLands(landData, 'all'))
+    }
+  }, [])
   const [modalOpen, setModalOpen] = useState(false)
 
   const closeModal = () => {
