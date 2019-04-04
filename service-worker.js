@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/landcycler/precache-manifest.3adaa34efc8162306fecc3b6b4bb674c.js"
+  "/landcycler/precache-manifest.821a2efb9496abec382365768117f5e7.js"
 );
 
 workbox.clientsClaim();
