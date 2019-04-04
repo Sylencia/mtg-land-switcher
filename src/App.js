@@ -34,7 +34,6 @@ const App = () => {
     }
   }, [])
 
-  const [userDeck, setUserDeck] = useState('')
   const [randomLands, setRandomLands] = useState({})
   useEffect(() => {
     const savedVersion = localStorage.getItem('version') || 0
@@ -49,9 +48,10 @@ const App = () => {
 
   const closeModal = () => {
     setModalOpen(false)
+    // If the display land is no longer part of the filtered list, reshuffle
     Object.entries(randomLands).forEach(([rLandType, rLandData]) => {
       const info = landData[rLandType].find(
-        dataLand => dataLand.name === rLandData.name
+        dataLand => dataLand.name === rLandData[0].name
       )
 
       if (!info.selectable) {
@@ -96,12 +96,7 @@ const App = () => {
           <i className="ms ms-cost ms-r" />
           <i className="ms ms-cost ms-g" />
         </div>
-        <DeckEntry
-          deck={userDeck}
-          newLands={randomLands}
-          updateDeck={setUserDeck}
-          userLang={userLang}
-        />
+        <DeckEntry newLands={randomLands} userLang={userLang} />
         <LandDisplay
           lands={randomLands}
           setRandomLands={getNewLands}
