@@ -22,8 +22,8 @@
   margin-right: 10px;
 }
 
-.guide {
-  width: 590px;
+.options {
+  width: 490px;
   margin-right: 10px;
 }
 
@@ -42,12 +42,22 @@
   list-style: none;
 }
 
-.guideList {
-  color: #f6f6f6;
-  margin-top: 0;
-  list-style: circle;
-}
-
 .link, :link:visited {
   color: inherit;
+}
+
+.select {
+  font-family: 'Nunito';
+  font-size: 16px;
+  background-color: $credit-background;
+  color: $orange;
+  padding: 2px 10px;
+  margin-left: 16px;
+  border-color: 1px solid $orange;
+  border-radius: 0;
+  appearance: none;
+}
+
+.optionTitle {
+  color: white;
 }
