@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { changeLandsInDeck } from '../../LandUtils'
 import styles from './DeckEntry.module.scss'
 
-export const DeckEntry = ({ deck, newLands, updateDeck }) => {
+export const DeckEntry = ({ deck, newLands, updateDeck, userLang }) => {
   const newDeckRef = createRef()
 
   return (
@@ -24,7 +24,7 @@ export const DeckEntry = ({ deck, newLands, updateDeck }) => {
           className={styles.deckDisplay}
           readOnly
           ref={newDeckRef}
-          value={changeLandsInDeck(deck, newLands)}
+          value={changeLandsInDeck(deck, newLands, userLang)}
           onClick={() => newDeckRef.current.select()}
           spellCheck="false"
         />
@@ -37,4 +37,5 @@ DeckEntry.propTypes = {
   deck: PropTypes.string.isRequired,
   newLands: PropTypes.shape().isRequired,
   updateDeck: PropTypes.func.isRequired,
+  userLang: PropTypes.string.isRequired,
 }

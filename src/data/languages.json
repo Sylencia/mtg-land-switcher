@@ -1,0 +1,58 @@
+{
+  "en": {
+    "Plains": "Plains",
+    "Island": "Island",
+    "Swamp": "Swamp",
+    "Mountain": "Mountain",
+    "Forest": "Forest"
+  },
+  "es": {
+    "Plains": "Llanura",
+    "Island": "Isla",
+    "Swamp": "Pantano",
+    "Mountain": "Montaña",
+    "Forest": "Bosque"
+  },
+  "fr": {
+    "Plains": "Plaine",
+    "Forest": "Forêt",
+    "Island": "Île",
+    "Swamp": "Marais",
+    "Mountain": "Montagne"
+  },
+  "de": {
+    "Plains": "Ebene",
+    "Forest": "Wald",
+    "Island": "Insel",
+    "Swamp": "Sumpf",
+    "Mountain": "Gebirge"
+  },
+  "it": {
+    "Plains": "Pianura",
+    "Forest": "Foresta",
+    "Island": "Isola",
+    "Swamp": "Palude",
+    "Mountain": "Montagna"
+  },
+  "pt": {
+    "Plains": "Planície",
+    "Forest": "Floresta",
+    "Island": "Ilha",
+    "Swamp": "Pântano",
+    "Mountain": "Montanha"
+  },
+  "ja": {
+    "Plains": "平地",
+    "Forest": "森",
+    "Island": "島",
+    "Swamp": "沼",
+    "Mountain": "山"
+  },
+  "ru": {
+    "Plains": "Равнина",
+    "Forest": "Лес",
+    "Island": "Остров",
+    "Swamp": "Болото",
+    "Mountain": "Гора"
+  }
+}
