@@ -1,10 +1,16 @@
-import React, { createRef } from 'react'
+import React, { createRef, useState } from 'react'
 import PropTypes from 'prop-types'
-import { changeLandsInDeck } from '../../LandUtils'
+import {
+  transformToSingleLand,
+  transformToMultipleLands,
+} from '../../LandUtils'
 import styles from './DeckEntry.module.scss'
 
-export const DeckEntry = ({ deck, newLands, updateDeck, userLang }) => {
+export const DeckEntry = ({ newLands, userLang }) => {
   const newDeckRef = createRef()
+  const [userDeck, setUserDeck] = useState('')
+
+  console.log(transformToMultipleLands(userDeck, newLands, userLang))
 
   return (
     <div className={styles.deckSection}>
@@ -12,8 +18,8 @@ export const DeckEntry = ({ deck, newLands, updateDeck, userLang }) => {
         <span className={styles.title}>Imported Deck</span>
         <textarea
           className={styles.deckDisplay}
-          value={deck}
-          onChange={e => updateDeck(e.target.value)}
+          value={userDeck}
+          onChange={e => setUserDeck(e.target.value)}
           spellCheck="false"
         />
       </div>
@@ -24,7 +30,7 @@ export const DeckEntry = ({ deck, newLands, updateDeck, userLang }) => {
           className={styles.deckDisplay}
           readOnly
           ref={newDeckRef}
-          value={changeLandsInDeck(deck, newLands, userLang)}
+          value={transformToSingleLand(userDeck, newLands, userLang)}
           onClick={() => newDeckRef.current.select()}
           spellCheck="false"
         />
@@ -34,8 +40,6 @@ export const DeckEntry = ({ deck, newLands, updateDeck, userLang }) => {
 }
 
 DeckEntry.propTypes = {
-  deck: PropTypes.string.isRequired,
   newLands: PropTypes.shape().isRequired,
-  updateDeck: PropTypes.func.isRequired,
   userLang: PropTypes.string.isRequired,
 }
