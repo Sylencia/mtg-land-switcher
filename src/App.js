@@ -5,12 +5,22 @@ import { LandDisplay } from './components/LandDisplay'
 import { LandFilter } from './components/LandFilter'
 import { Modal } from './components/Modal'
 import { ModifierBar } from './components/ModifierBar'
-import { Credits } from './components/Credits'
+import { Footer } from './components/Footer'
 import lands from './data/lands.json'
 import styles from './App.module.scss'
 import './stylesheets/global.module.scss'
 
 const App = () => {
+  const [userLang, setUserLang] = useState('en')
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('language')
+
+    if (savedLanguage) {
+      setUserLang(savedLanguage)
+    } else {
+      localStorage.setItem('language', userLang)
+    }
+  }, [])
   const [landData, setLandData] = useState(lands.data)
   // If there's a saved version of the data, use that instead (for filters)
   useEffect(() => {
@@ -45,6 +55,11 @@ const App = () => {
     document.body.classList.remove(styles.modalOpen)
   }
 
+  const changeLanguage = newLang => {
+    setUserLang(newLang)
+    localStorage.setItem('language', newLang)
+  }
+
   const getNewLands = (land = 'all') => {
     setRandomLands(getRandomisedLands(landData, land, randomLands))
   }
@@ -61,6 +76,7 @@ const App = () => {
           landData={landData}
           setLandData={setLandData}
           closeModal={closeModal}
+          userLang={userLang}
         />
       </Modal>
       <div className={styles.app}>
@@ -76,11 +92,16 @@ const App = () => {
           deck={userDeck}
           newLands={randomLands}
           updateDeck={setUserDeck}
+          userLang={userLang}
         />
-        <LandDisplay lands={randomLands} setRandomLands={getNewLands} />
+        <LandDisplay
+          lands={randomLands}
+          setRandomLands={getNewLands}
+          userLang={userLang}
+        />
         <ModifierBar setRandomLands={getNewLands} openFilter={openModal} />
       </div>
-      <Credits />
+      <Footer userLang={userLang} setUserLang={changeLanguage} />
     </Fragment>
   )
 }
