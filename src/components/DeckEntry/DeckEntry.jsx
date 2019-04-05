@@ -1,16 +1,11 @@
 import React, { createRef, useState } from 'react'
 import PropTypes from 'prop-types'
-import {
-  transformToSingleLand,
-  transformToMultipleLands,
-} from '../../LandUtils'
+import { transformLandsInDeck } from '../../utils/LandUtils'
 import styles from './DeckEntry.module.scss'
 
-export const DeckEntry = ({ newLands, userLang }) => {
+export const DeckEntry = ({ newLands, userLang, numLands }) => {
   const newDeckRef = createRef()
   const [userDeck, setUserDeck] = useState('')
-
-  console.log(transformToMultipleLands(userDeck, newLands, userLang))
 
   return (
     <div className={styles.deckSection}>
@@ -30,7 +25,7 @@ export const DeckEntry = ({ newLands, userLang }) => {
           className={styles.deckDisplay}
           readOnly
           ref={newDeckRef}
-          value={transformToSingleLand(userDeck, newLands, userLang)}
+          value={transformLandsInDeck(userDeck, newLands, userLang, numLands)}
           onClick={() => newDeckRef.current.select()}
           spellCheck="false"
         />
@@ -42,4 +37,5 @@ export const DeckEntry = ({ newLands, userLang }) => {
 DeckEntry.propTypes = {
   newLands: PropTypes.shape().isRequired,
   userLang: PropTypes.string.isRequired,
+  numLands: PropTypes.number.isRequired,
 }

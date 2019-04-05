@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { translateLandName } from '../../LandUtils'
+import { translateLandName } from '../../utils/LandUtils'
 
 import styles from './LandDisplay.module.scss'
 
