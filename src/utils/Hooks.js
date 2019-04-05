@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export const useLocalStorage = (key, initialValue) => {
   const [storedValue, setStoredValue] = useState(() => {
@@ -25,4 +25,13 @@ export const useLocalStorage = (key, initialValue) => {
   }
 
   return [storedValue, setValue]
+}
+
+export const useLockBodyScroll = () => {
+  useEffect(() => {
+    const originalOverflow = window.getComputedStyle(document.body).overflow
+    document.body.style.overflow = 'hidden'
+
+    return () => (document.body.style.overflow = originalOverflow)
+  }, [])
 }

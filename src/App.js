@@ -46,16 +46,10 @@ const App = () => {
     getNewLands('all')
     localStorage.setItem('version', lands.version)
     localStorage.setItem('data', JSON.stringify(landData))
-    document.body.classList.remove(styles.modalOpen)
   }
 
   const getNewLands = (land = 'all') => {
     setRandomLands(getRandomisedLands(landData, land, randomLands))
-  }
-
-  const openModal = () => {
-    setModalOpen(true)
-    document.body.classList.add(styles.modalOpen)
   }
 
   const scrollToFooter = () => {
@@ -97,7 +91,10 @@ const App = () => {
           setRandomLands={getNewLands}
           userLang={userLang}
         />
-        <ModifierBar setRandomLands={getNewLands} openFilter={openModal} />
+        <ModifierBar
+          setRandomLands={getNewLands}
+          openFilter={() => setModalOpen(true)}
+        />
       </div>
       <div ref={footerRef}>
         <Footer

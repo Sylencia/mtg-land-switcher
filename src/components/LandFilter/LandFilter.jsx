@@ -2,11 +2,13 @@ import React, { useState, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 
+import { useLockBodyScroll } from '../../utils/Hooks'
 import { translateLandName } from '../../utils/LandUtils'
 
 import styles from './LandFilter.module.scss'
 
 export const LandFilter = ({ landData, setLandData, closeModal, userLang }) => {
+  useLockBodyScroll()
   const [tab, setTab] = useState('Plains')
   const updateActiveTab = e => setTab(e.target.id)
 
