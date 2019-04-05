@@ -14,17 +14,19 @@
 }
 
 .contact {
-  width: 190px;
+  width: 250px;
 }
 
 .credits {
-  width: 390px;
+  width: 290px;
   margin-right: 10px;
+  margin-bottom: 16px;
 }
 
 .options {
-  width: 490px;
+  width: 340px;
   margin-right: 10px;
+  margin-bottom: 16px;
 }
 
 .header {
@@ -52,12 +54,29 @@
   background-color: $credit-background;
   color: $orange;
   padding: 2px 10px;
-  margin-left: 16px;
+  margin-left: 8px;
   border-color: 1px solid $orange;
   border-radius: 0;
   appearance: none;
+  width: 160px;
 }
 
 .optionTitle {
   color: white;
+  margin-right: 8px;
+}
+
+.optionSection {
+  margin-bottom: 8px;
+}
+
+.maxLands {
+  width: 50px;
+  font-size: 16px;
+}
+
+.helperText {
+  color: white;
+  font-style: italic;
+  font-size: 12px;
 }

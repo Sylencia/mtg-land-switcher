@@ -1,5 +1,6 @@
-import React, { useState, useEffect, Fragment } from 'react'
-import { getRandomisedLands } from './LandUtils'
+import React, { useState, useEffect, Fragment, createRef } from 'react'
+import { getRandomisedLands } from './utils/LandUtils'
+import { useLocalStorage } from './utils/Hooks'
 import { DeckEntry } from './components/DeckEntry'
 import { LandDisplay } from './components/LandDisplay'
 import { LandFilter } from './components/LandFilter'
@@ -7,20 +8,14 @@ import { Modal } from './components/Modal'
 import { ModifierBar } from './components/ModifierBar'
 import { Footer } from './components/Footer'
 import lands from './data/lands.json'
+import gear from './images/settings.svg'
 import styles from './App.module.scss'
 import './stylesheets/global.module.scss'
 
 const App = () => {
-  const [userLang, setUserLang] = useState('en')
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem('language')
-
-    if (savedLanguage) {
-      setUserLang(savedLanguage)
-    } else {
-      localStorage.setItem('language', userLang)
-    }
-  }, [])
+  const footerRef = createRef()
+  const [numLands, setNumLands] = useLocalStorage('numLands', 1)
+  const [userLang, setUserLang] = useLocalStorage('language', 'en')
 
   const [landData, setLandData] = useState(lands.data)
   useEffect(() => {
@@ -48,24 +43,10 @@ const App = () => {
 
   const closeModal = () => {
     setModalOpen(false)
-    // If the display land is no longer part of the filtered list, reshuffle
-    Object.entries(randomLands).forEach(([rLandType, rLandData]) => {
-      const info = landData[rLandType].find(
-        dataLand => dataLand.name === rLandData[0].name
-      )
-
-      if (!info.selectable) {
-        getNewLands(rLandType)
-      }
-    })
+    getNewLands('all')
     localStorage.setItem('version', lands.version)
     localStorage.setItem('data', JSON.stringify(landData))
     document.body.classList.remove(styles.modalOpen)
-  }
-
-  const changeLanguage = newLang => {
-    setUserLang(newLang)
-    localStorage.setItem('language', newLang)
   }
 
   const getNewLands = (land = 'all') => {
@@ -75,6 +56,13 @@ const App = () => {
   const openModal = () => {
     setModalOpen(true)
     document.body.classList.add(styles.modalOpen)
+  }
+
+  const scrollToFooter = () => {
+    window.scrollTo({
+      top: footerRef.current.offsetTop,
+      behavior: 'smooth',
+    })
   }
 
   return (
@@ -89,6 +77,9 @@ const App = () => {
       </Modal>
       <div className={styles.app}>
         <h1 className={styles.header}>Landcycler</h1>
+        <button className={styles.settings} onClick={scrollToFooter}>
+          <img src={gear} alt="Settings" />
+        </button>
         <div className={styles.landIcons}>
           <i className="ms ms-cost ms-w" />
           <i className="ms ms-cost ms-u" />
@@ -96,7 +87,11 @@ const App = () => {
           <i className="ms ms-cost ms-r" />
           <i className="ms ms-cost ms-g" />
         </div>
-        <DeckEntry newLands={randomLands} userLang={userLang} />
+        <DeckEntry
+          newLands={randomLands}
+          userLang={userLang}
+          numLands={parseInt(numLands)}
+        />
         <LandDisplay
           lands={randomLands}
           setRandomLands={getNewLands}
@@ -104,7 +99,14 @@ const App = () => {
         />
         <ModifierBar setRandomLands={getNewLands} openFilter={openModal} />
       </div>
-      <Footer userLang={userLang} setUserLang={changeLanguage} />
+      <div ref={footerRef}>
+        <Footer
+          userLang={userLang}
+          setUserLang={setUserLang}
+          numLands={parseInt(numLands)}
+          setNumLands={setNumLands}
+        />
+      </div>
     </Fragment>
   )
 }

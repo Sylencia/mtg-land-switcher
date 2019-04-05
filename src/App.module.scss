@@ -4,6 +4,7 @@
   background-color: $main-background;
   min-height: 100vh;
   padding-bottom: 16px;
+  scroll-behavior: smooth;
 }
 
 .modalOpen {
@@ -25,4 +26,20 @@
   i {
     margin: 0 8px;
   }
+}
+
+.settings {
+  position: absolute;
+  top: 8px;
+  right: 32px;
+  height: 32px;
+  width: 32px;
+  background: rgba(255, 255, 255, .2);
+  border: none;
+  border-radius: 16px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  cursor: pointer;
 }

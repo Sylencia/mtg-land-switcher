@@ -1,4 +1,4 @@
-import languageData from './data/languages.json'
+import languageData from '../data/languages.json'
 
 const shuffleArray = deck => {
   let oldPos = deck.length
@@ -26,33 +26,12 @@ export const getRandomisedLands = (landData, land, oldLands = {}) => {
   return randomisedLands
 }
 
-export const transformToSingleLand = (deck, lands, userLang = 'en') => {
-  const deckArray = deck.split('\n')
-  const newDeckArray = deckArray.map(card => {
-    const splitCard = card.split(' ')
-    if (splitCard.length === 4) {
-      const [count, name] = splitCard
-      // First check if their card is in their language
-      const foundName = Object.values(languageData[userLang]).find(
-        val => val === name
-      )
-      if (foundName !== undefined) {
-        const landType = getLandTypeFromLanguage(name, userLang)
-        // new land is the first of the shuffled list
-        const newLand = lands[landType][0]
-        const cardName = `${name} ${newLand.name}`
-        return `${count} ${cardName}`
-      }
-    }
-
-    return card
-  })
-
-  return newDeckArray.join('\n')
-}
-
-export const transformToMultipleLands = (deck, lands, userLang = 'en') => {
-  console.log(lands)
+export const transformLandsInDeck = (
+  deck,
+  lands,
+  userLang = 'en',
+  numberOfLands
+) => {
   const deckArray = deck.split('\n')
   const newDeckArray = deckArray.map(card => {
     const splitCard = card.split(' ')
@@ -65,21 +44,26 @@ export const transformToMultipleLands = (deck, lands, userLang = 'en') => {
       if (foundName !== undefined) {
         const landType = getLandTypeFromLanguage(name, userLang)
         const newLands = lands[landType]
-        let remainingLands = count
-        let newLandCount = newLands.length
-        let rLandIndex = 0
+        let remainingLandCount = count
+        let remainingArtCount =
+          numberOfLands > 0
+            ? Math.min(newLands.length, numberOfLands)
+            : newLands.length
+        let landIndex = 0
         const cardArray = []
-        while (remainingLands > 0) {
-          const newLand = newLands[rLandIndex]
+        while (remainingLandCount > 0) {
+          const newLand = newLands[landIndex++]
           const cardName = `${name} ${newLand.name}`
-          const landCount = Math.ceil(remainingLands / newLandCount)
-          remainingLands -= landCount
-          newLandCount--
-          rLandIndex++
+          const landCount = Math.ceil(remainingLandCount / remainingArtCount)
+          remainingLandCount -= landCount
+          remainingArtCount--
           cardArray.push(`${landCount} ${cardName}`)
         }
 
-        return cardArray.join('\n')
+        return cardArray
+          .sort()
+          .reverse()
+          .join('\n')
       }
     }
 
@@ -89,8 +73,9 @@ export const transformToMultipleLands = (deck, lands, userLang = 'en') => {
   return newDeckArray.join('\n')
 }
 
-export const translateLandName = (name, language = 'en') =>
-  languageData[language][name]
+export const translateLandName = (name, language = 'en') => {
+  return languageData[language][name]
+}
 
 export const getLandTypeFromLanguage = (name, language = 'en') => {
   const data = Object.entries(languageData[language])
