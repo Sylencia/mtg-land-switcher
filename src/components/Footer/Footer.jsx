@@ -2,14 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './Footer.module.scss'
 
-const setToNumber = value => {
-  const parsedVal = parseInt(value)
-  if (Number.isInteger(parsedVal)) {
-    return parsedVal
-  }
-  return 1
-}
-
 export const Footer = ({ userLang, setUserLang, numLands, setNumLands }) => (
   <div className={styles.main}>
     <div className={styles.innerContainer}>
@@ -40,7 +32,7 @@ export const Footer = ({ userLang, setUserLang, numLands, setNumLands }) => (
             type="number"
             min="0"
             max="100"
-            onChange={e => setNumLands(setToNumber(e.target.value))}
+            onChange={e => setNumLands(e.target.value)}
           />
           <span className={styles.optionTitle}> different land art(s)</span>
           <div className={styles.helperText}>
@@ -93,6 +85,6 @@ export const Footer = ({ userLang, setUserLang, numLands, setNumLands }) => (
 Footer.propTypes = {
   userLang: PropTypes.string.isRequired,
   setUserLang: PropTypes.func.isRequired,
-  numLands: PropTypes.number.isRequired,
+  numLands: PropTypes.string.isRequired,
   setNumLands: PropTypes.func.isRequired,
 }

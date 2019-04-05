@@ -14,7 +14,7 @@ import './stylesheets/global.module.scss'
 
 const App = () => {
   const footerRef = createRef()
-  const [numLands, setNumLands] = useLocalStorage('numLands', 1)
+  const [numLands, setNumLands] = useLocalStorage('numLands', '1')
   const [userLang, setUserLang] = useLocalStorage('language', 'en')
 
   const [landData, setLandData] = useState(lands.data)
@@ -103,7 +103,7 @@ const App = () => {
         <Footer
           userLang={userLang}
           setUserLang={setUserLang}
-          numLands={parseInt(numLands)}
+          numLands={numLands}
           setNumLands={setNumLands}
         />
       </div>
