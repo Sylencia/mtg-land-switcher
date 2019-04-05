@@ -1,13 +1,14 @@
 {
-  "main.css": "/landcycler/static/css/main.8557b9fb.chunk.css",
-  "main.js": "/landcycler/static/js/main.0c923835.chunk.js",
-  "main.js.map": "/landcycler/static/js/main.0c923835.chunk.js.map",
+  "main.css": "/landcycler/static/css/main.3409261e.chunk.css",
+  "main.js": "/landcycler/static/js/main.acae253a.chunk.js",
+  "main.js.map": "/landcycler/static/js/main.acae253a.chunk.js.map",
   "runtime~main.js": "/landcycler/static/js/runtime~main.53ae7d6b.js",
   "runtime~main.js.map": "/landcycler/static/js/runtime~main.53ae7d6b.js.map",
-  "static/js/2.b89a7918.chunk.js": "/landcycler/static/js/2.b89a7918.chunk.js",
-  "static/js/2.b89a7918.chunk.js.map": "/landcycler/static/js/2.b89a7918.chunk.js.map",
+  "static/js/2.20f0311a.chunk.js": "/landcycler/static/js/2.20f0311a.chunk.js",
+  "static/js/2.20f0311a.chunk.js.map": "/landcycler/static/js/2.20f0311a.chunk.js.map",
   "index.html": "/landcycler/index.html",
-  "precache-manifest.fdd6809137c3786f34a467eefee67cb4.js": "/landcycler/precache-manifest.fdd6809137c3786f34a467eefee67cb4.js",
+  "precache-manifest.c00e284c4dc7515b10a772d74d460856.js": "/landcycler/precache-manifest.c00e284c4dc7515b10a772d74d460856.js",
   "service-worker.js": "/landcycler/service-worker.js",
-  "static/css/main.8557b9fb.chunk.css.map": "/landcycler/static/css/main.8557b9fb.chunk.css.map"
+  "static/css/main.3409261e.chunk.css.map": "/landcycler/static/css/main.3409261e.chunk.css.map",
+  "static/media/settings.svg": "/landcycler/static/media/settings.6acc27e6.svg"
 }
