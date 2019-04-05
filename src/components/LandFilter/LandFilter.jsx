@@ -2,7 +2,7 @@ import React, { useState, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 
-import { translateLandName } from '../../LandUtils'
+import { translateLandName } from '../../utils/LandUtils'
 
 import styles from './LandFilter.module.scss'
 
