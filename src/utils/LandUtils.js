@@ -46,7 +46,7 @@ export const transformLandsInDeck = (
         const newLands = lands[landType]
         let remainingLandCount = count
         let remainingArtCount =
-          numberOfLands > 0
+          !isNaN(numberOfLands) && numberOfLands > 0
             ? Math.min(newLands.length, numberOfLands)
             : newLands.length
         let landIndex = 0
@@ -60,10 +60,7 @@ export const transformLandsInDeck = (
           cardArray.push(`${landCount} ${cardName}`)
         }
 
-        return cardArray
-          .sort()
-          .reverse()
-          .join('\n')
+        return cardArray.join('\n')
       }
     }
 
