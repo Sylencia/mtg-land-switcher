@@ -16,40 +16,29 @@ const App = () => {
   const footerRef = createRef()
   const [numLands, setNumLands] = useLocalStorage('numLands', '1')
   const [userLang, setUserLang] = useLocalStorage('language', 'en')
-
-  const [landData, setLandData] = useState(lands.data)
-  useEffect(() => {
-    const savedVersion = localStorage.getItem('version') || 0
-    const savedData = localStorage.getItem('data')
-    if (lands.version <= savedVersion && savedData) {
-      setLandData(JSON.parse(savedData))
-    } else {
-      localStorage.setItem('data', JSON.stringify(lands.data))
-      localStorage.setItem('version', lands.version)
-    }
-  }, [])
+  const [filteredLands, setFilteredLands] = useLocalStorage('filteredLands', {
+    Plains: [],
+    Island: [],
+    Swamp: [],
+    Mountain: [],
+    Forest: [],
+  })
 
   const [randomLands, setRandomLands] = useState({})
   useEffect(() => {
-    const savedVersion = localStorage.getItem('version') || 0
-    const savedData = localStorage.getItem('data')
-    if (lands.version <= savedVersion && savedData) {
-      setRandomLands(getRandomisedLands(JSON.parse(savedData), 'all'))
-    } else {
-      setRandomLands(getRandomisedLands(landData, 'all'))
-    }
+    setRandomLands(getRandomisedLands(filteredLands, 'all'))
   }, [])
+
+  console.log(randomLands)
   const [modalOpen, setModalOpen] = useState(false)
 
   const closeModal = () => {
     setModalOpen(false)
     getNewLands('all')
-    localStorage.setItem('version', lands.version)
-    localStorage.setItem('data', JSON.stringify(landData))
   }
 
   const getNewLands = (land = 'all') => {
-    setRandomLands(getRandomisedLands(landData, land, randomLands))
+    setRandomLands(getRandomisedLands(filteredLands, land, randomLands))
   }
 
   const scrollToFooter = () => {
@@ -63,8 +52,9 @@ const App = () => {
     <Fragment>
       <Modal isOpen={modalOpen}>
         <LandFilter
-          landData={landData}
-          setLandData={setLandData}
+          filteredLands={filteredLands}
+          setFilteredLands={setFilteredLands}
+          landData={lands}
           closeModal={closeModal}
           userLang={userLang}
         />
