@@ -29,7 +29,6 @@ const App = () => {
     setRandomLands(getRandomisedLands(filteredLands, 'all'))
   }, [])
 
-  console.log(randomLands)
   const [modalOpen, setModalOpen] = useState(false)
 
   const closeModal = () => {
