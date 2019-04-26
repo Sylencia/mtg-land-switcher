@@ -1,4 +1,6 @@
 import languageData from '../data/languages.json'
+import landData from '../data/lands.json'
+import _includes from 'lodash/includes'
 
 const shuffleArray = deck => {
   let oldPos = deck.length
@@ -11,10 +13,12 @@ const shuffleArray = deck => {
   return deck
 }
 
-export const getRandomisedLands = (landData, land, oldLands = {}) => {
+export const getRandomisedLands = (filteredLands, land, oldLands = {}) => {
   const landTypes = Object.keys(landData)
   const randomisedLands = landTypes.reduce((newLands, landType) => {
-    const possibleLands = landData[landType].filter(land => land.selectable)
+    const possibleLands = landData[landType].filter(land => {
+      return !_includes(filteredLands[landType], land.name)
+    })
     if (land === 'all' || land === landType) {
       newLands[landType] = shuffleArray(possibleLands)
     } else {

@@ -1,4 +1,5 @@
 import React, { useState, Fragment } from 'react'
+import _includes from 'lodash/includes'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 
@@ -7,7 +8,13 @@ import { translateLandName } from '../../utils/LandUtils'
 
 import styles from './LandFilter.module.scss'
 
-export const LandFilter = ({ landData, setLandData, closeModal, userLang }) => {
+export const LandFilter = ({
+  filteredLands,
+  setFilteredLands,
+  landData,
+  closeModal,
+  userLang,
+}) => {
   useLockBodyScroll()
   const [tab, setTab] = useState('Plains')
   const updateActiveTab = e => setTab(e.target.id)
@@ -15,8 +22,9 @@ export const LandFilter = ({ landData, setLandData, closeModal, userLang }) => {
   const allLands = Object.keys(landData)
 
   const tabs = allLands.reduce((allTabs, land) => {
-    const data = landData[land]
-    const activeLandCount = data.filter(land => land.selectable).length
+    const currentLandData = landData[land]
+    const filteredLandNames = filteredLands[land]
+    const activeLandCount = currentLandData.length - filteredLandNames.length
     const landName = translateLandName(land, userLang)
 
     allTabs.push(
@@ -37,35 +45,43 @@ export const LandFilter = ({ landData, setLandData, closeModal, userLang }) => {
     return allTabs
   }, [])
 
-  const filteredLands = landData[tab]
-  const activeLandCount = filteredLands.filter(land => land.selectable).length
+  const currentTabData = landData[tab]
+  const currentFilteredTab = filteredLands[tab]
+  const activeLandCount = currentTabData.length - currentFilteredTab.length
   const filteredLandName = translateLandName(tab, userLang)
 
   const onLandClick = name => {
-    const foundLand = filteredLands.find(land => land.name === name)
-    // Don't allow them to go below 1 active land
-    if (activeLandCount === 1 && foundLand.selectable) {
-      return
-    }
+    const foundLand = currentFilteredTab.find(land => land === name)
 
-    foundLand.selectable = !foundLand.selectable
-    setLandData({
-      ...landData,
-      [tab]: filteredLands,
-    })
+    if (foundLand === undefined) {
+      // Don't allow them to go below 1 active land
+      if (activeLandCount === 1) {
+        return
+      }
+
+      setFilteredLands({
+        ...filteredLands,
+        [tab]: [...currentFilteredTab, name],
+      })
+    } else {
+      setFilteredLands({
+        ...filteredLands,
+        [tab]: currentFilteredTab.filter(land => land !== name),
+      })
+    }
   }
 
   return (
     <div>
       <div className={styles.tab}>{tabs}</div>
       <div className={styles.container}>
-        {filteredLands.map(land => {
+        {currentTabData.map(land => {
           const displayName = `${filteredLandName} ${land.name}`
           return (
             <div
               key={land.name}
               className={cx(styles.land, {
-                [styles.removed]: !land.selectable,
+                [styles.removed]: _includes(currentFilteredTab, land.name),
               })}
               onClick={() => onLandClick(land.name)}
             >
@@ -93,8 +109,9 @@ export const LandFilter = ({ landData, setLandData, closeModal, userLang }) => {
 }
 
 LandFilter.propTypes = {
+  filteredLands: PropTypes.shape().isRequired,
+  setFilteredLands: PropTypes.func.isRequired,
   landData: PropTypes.shape().isRequired,
-  setLandData: PropTypes.func.isRequired,
   closeModal: PropTypes.func.isRequired,
   userLang: PropTypes.string.isRequired,
 }

@@ -2,16 +2,14 @@ import { useState, useEffect } from 'react'
 
 export const useLocalStorage = (key, initialValue) => {
   const [storedValue, setStoredValue] = useState(() => {
-    try {
-      const item = localStorage.getItem(key)
-
-      // If it's an object, we need to parse it first, else just return the item
-      if (item) {
-        return item instanceof Object ? JSON.parse(item) : item
+    const item = localStorage.getItem(key)
+    if (item) {
+      try {
+        return JSON.parse(item)
+      } catch {
+        return item
       }
-
-      return initialValue
-    } catch (error) {
+    } else {
       return initialValue
     }
   })
