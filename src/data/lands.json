@@ -59,6 +59,18 @@
     {
       "name": "(RNA) 260",
       "imageUrl": "https://img.scryfall.com/cards/art_crop/front/9/4/9433619d-5bd1-41e9-ab7a-364c98347b1d.jpg"
+    },
+    {
+      "name": "(WAR) 250",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/d/9/d92ef517-2417-43a2-8b1a-0673d1531c65.jpg"
+    },
+    {
+      "name": "(WAR) 251",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/8/4/84144d57-f0b6-4011-aee8-c626c21998c4.jpg"
+    },
+    {
+      "name": "(WAR) 252",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/0/d/0d7ae52e-9ea7-4e9d-a9c9-c819cc768cd6.jpg"
     }
   ],
   "Island": [
@@ -121,6 +133,18 @@
     {
       "name": "(RNA) 261",
       "imageUrl": "https://img.scryfall.com/cards/art_crop/front/1/9/197f5bd0-5ab3-4bf4-b20e-1389c0e9527a.jpg"
+    },
+    {
+      "name": "(WAR) 253",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/7/0/7014b9fc-a906-4ffd-a482-22ba8dbe3b4a.jpg"
+    },
+    {
+      "name": "(WAR) 254",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/4/0/40eb7b85-8c0f-4311-85f3-11bcb45ba0b6.jpg"
+    },
+    {
+      "name": "(WAR) 255",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/a/2/a24e28a0-a10f-4324-b008-09564e85573e.jpg"
     }
   ],
   "Swamp": [
@@ -183,6 +207,18 @@
     {
       "name": "(RNA) 262",
       "imageUrl": "https://img.scryfall.com/cards/art_crop/front/3/0/308809ad-c150-49b1-83e3-b78494156d7a.jpg"
+    },
+    {
+      "name": "(WAR) 256",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/2/4/24eeb424-235d-4346-9355-57914e740ec6.jpg"
+    },
+    {
+      "name": "(WAR) 257",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/2/1/211b98e5-8ec2-4108-bacd-97e854a85b6f.jpg"
+    },
+    {
+      "name": "(WAR) 258",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/0/4/04559991-3278-469f-b2be-07c3b27ad5a5.jpg"
     }
   ],
   "Mountain": [
@@ -245,6 +281,18 @@
     {
       "name": "(RNA) 263",
       "imageUrl": "https://img.scryfall.com/cards/art_crop/front/5/4/54a773e3-93f0-4bf8-ab6a-8cee939d743a.jpg"
+    },
+    {
+      "name": "(WAR) 259",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/4/8/489fdba7-5c25-4cf3-a1e0-3e0fda6c6ee6.jpg"
+    },
+    {
+      "name": "(WAR) 260",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/9/e/9e7878e1-28a5-4527-ba61-ed6c6b855309.jpg"
+    },
+    {
+      "name": "(WAR) 261",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/1/e/1ef001a8-adb5-4125-aa1a-f5e3f8ca898b.jpg"
     }
   ],
   "Forest": [
@@ -307,6 +355,18 @@
     {
       "name": "(RNA) 264",
       "imageUrl": "https://img.scryfall.com/cards/art_crop/front/4/8/48764854-d268-462d-a016-27329c8f062d.jpg"
+    },
+    {
+      "name": "(WAR) 262",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/a/9/a9d61651-349e-40d0-a7c4-c9561e190405.jpg"
+    },
+    {
+      "name": "(WAR) 263",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/7/4/74ef8358-9812-4d40-9532-d667513d7701.jpg"
+    },
+    {
+      "name": "(WAR) 264",
+      "imageUrl": "https://img.scryfall.com/cards/art_crop/front/0/1/0120879f-df13-4583-b260-0fc298518f16.jpg"
     }
   ]
 }
