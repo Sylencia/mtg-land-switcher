@@ -1,14 +1,16 @@
 {
-  "main.css": "/landcycler/static/css/main.32aeb7e6.chunk.css",
-  "main.js": "/landcycler/static/js/main.f7bc5dd8.chunk.js",
-  "main.js.map": "/landcycler/static/js/main.f7bc5dd8.chunk.js.map",
-  "runtime~main.js": "/landcycler/static/js/runtime~main.53ae7d6b.js",
-  "runtime~main.js.map": "/landcycler/static/js/runtime~main.53ae7d6b.js.map",
-  "static/js/2.eeca14c5.chunk.js": "/landcycler/static/js/2.eeca14c5.chunk.js",
-  "static/js/2.eeca14c5.chunk.js.map": "/landcycler/static/js/2.eeca14c5.chunk.js.map",
-  "index.html": "/landcycler/index.html",
-  "precache-manifest.d41725db3243fe638480a676373f8403.js": "/landcycler/precache-manifest.d41725db3243fe638480a676373f8403.js",
-  "service-worker.js": "/landcycler/service-worker.js",
-  "static/css/main.32aeb7e6.chunk.css.map": "/landcycler/static/css/main.32aeb7e6.chunk.css.map",
-  "static/media/settings.svg": "/landcycler/static/media/settings.6acc27e6.svg"
+  "files": {
+    "main.css": "/landcycler/static/css/main.d972b4d2.chunk.css",
+    "main.js": "/landcycler/static/js/main.9589c32a.chunk.js",
+    "main.js.map": "/landcycler/static/js/main.9589c32a.chunk.js.map",
+    "runtime~main.js": "/landcycler/static/js/runtime~main.53ae7d6b.js",
+    "runtime~main.js.map": "/landcycler/static/js/runtime~main.53ae7d6b.js.map",
+    "static/js/2.eeca14c5.chunk.js": "/landcycler/static/js/2.eeca14c5.chunk.js",
+    "static/js/2.eeca14c5.chunk.js.map": "/landcycler/static/js/2.eeca14c5.chunk.js.map",
+    "index.html": "/landcycler/index.html",
+    "precache-manifest.a0c6df508b24352c33b8dec9c9d6e2d7.js": "/landcycler/precache-manifest.a0c6df508b24352c33b8dec9c9d6e2d7.js",
+    "service-worker.js": "/landcycler/service-worker.js",
+    "static/css/main.d972b4d2.chunk.css.map": "/landcycler/static/css/main.d972b4d2.chunk.css.map",
+    "static/media/settings.svg": "/landcycler/static/media/settings.82414380.svg"
+  }
 }
