@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/landcycler/precache-manifest.a0c6df508b24352c33b8dec9c9d6e2d7.js"
+  "/landcycler/precache-manifest.2eb38b90278be51fd92e0005dbc8adb7.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1d8b5cfacf2f2ed18f527e20fa29e2de",
+    "revision": "8da2148471496d8ff482b1e7dbd800a2",
     "url": "/landcycler/index.html"
   },
   {
-    "revision": "debf78b1b93839714ff5",
+    "revision": "0ab5633aa13d72be3ec1",
     "url": "/landcycler/static/css/main.d972b4d2.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/landcycler/static/js/2.eeca14c5.chunk.js"
   },
   {
-    "revision": "debf78b1b93839714ff5",
-    "url": "/landcycler/static/js/main.9589c32a.chunk.js"
+    "revision": "0ab5633aa13d72be3ec1",
+    "url": "/landcycler/static/js/main.ec5dc621.chunk.js"
   },
   {
     "revision": "f753b7867b16cb34ad40",
